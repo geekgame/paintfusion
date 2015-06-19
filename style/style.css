@@ -1,0 +1,74 @@
+body {
+	background-image: url(../images/greyBg.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 0;
+	background-origin: padding-box;
+}
+.Middle {
+	width: 50%;
+	position: absolute;
+	left: 25%;
+	height: auto;
+}
+h1 {
+	color: #8b0607;
+	font-family: Coalition;
+}
+h2 {
+	font-family: Neuropol;
+	color: #3F3F3F;
+}
+.content  {
+	font-family: asap;
+	font-style: normal;
+	font-weight: 400;
+}
+.header {
+	background-color: #000000;
+	text-align: left;
+	overflow: hidden;
+	height: 45px;
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+	color: #E8E8E8;
+	text-indent: 20px;
+	background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	background-image: -moz-linear-gradient(270deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	background-image: -o-linear-gradient(270deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	font-family: Neuropol;
+	border-width: 0px;
+	vertical-align: baseline;
+}
+red {
+	color: #8b0607;
+}
+#green input[type="submit"] {
+  background: #1FCE6D;
+  border: 0;
+  width: 350px;
+  height: 40px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#red input[type=submit] {
+  background: #FF272B;
+  border: 0;
+  width: 350px;
+  height: 40px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  text-align:center;
+}
+a {
+	color: rgba(255,255,255,1.00);
+}

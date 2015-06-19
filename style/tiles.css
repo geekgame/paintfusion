@@ -1,0 +1,38 @@
+.tileTournoi {
+	color: rgba(208,208,208,1.00);
+	width: 20cm;
+	margin-right: 10%;
+	margin-left: 10%;
+	height: 4cm;
+	background-color: rgba(11,37,50,1.00);
+	left: 20%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	top: 10px;
+}
+.tileImg {
+	position: static;
+	width: 3cm;
+	height: 3cm;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+.tileTitle {
+	position: relative;
+	top: -123.5px;
+	left: 193px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	color: rgba(255,255,255,1.00);
+	font-family: Coalition;
+
+}
+.tileText {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+	font-family: Neuropol;
+	width: 16cm;
+	top: -99px;
+	left: 162px;
+}

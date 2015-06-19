@@ -1,0 +1,88 @@
+.troll{
+	position:fixed !important;
+	color:#FF0004;
+}
+.leftpanel{
+	position: fixed !important;
+	background-color: rgba(11,37,50,1.00);
+	width: 20%;
+	margin: 0;
+	padding: 0;
+	left: 0px;
+	height: 100%;
+}
+.leftpanel .name {
+	background-color: #0A2328;
+	color: #DCDCDC;
+	font-family: Coalition;
+	height: 50px;
+	text-indent: 15px;
+	font-variant: normal;
+	line-height: 45px;
+}.leftpanel .tournois {
+	background-color: #0A2328;
+	color: #8B8B8B;
+	font-family: Neuropol;
+	text-indent: 15px;
+	font-variant: normal;
+	line-height: 45px;
+	height: auto;
+	width: 100%;
+}red {
+	color: #FF0004;
+}
+.disconnect {
+	color: #DCDCDC;
+	font-family: Neuropol;
+	font-size: small;
+	text-align: left;
+	text-indent: 24px;
+}a{
+	color:#C3C3C3
+}
+titre {
+	color: #DCDCDC;
+	font-family: Coalition;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url(../images/greyBg.jpg);
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.middle {
+	position: absolute;
+	left: 20%;
+	width: 80%;
+	height: 100%;
+	top: 45px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.header {
+	background-color: #000000;
+	text-align: left;
+	overflow: hidden;
+	height: 45px;
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+	color: #E8E8E8;
+	text-indent: 20px;
+	background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	background-image: -moz-linear-gradient(270deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	background-image: -o-linear-gradient(270deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(0,0,0,1.00) 0%,rgba(42,42,42,1.00) 100%);
+	font-family: Neuropol;
+	border-width: 0px;
+	vertical-align: baseline;
+}
+.headerText {
+	top: -12px;
+}
+#frame {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

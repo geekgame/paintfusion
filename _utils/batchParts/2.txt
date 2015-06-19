@@ -1,0 +1,8 @@
+
+	goto exit
+)
+:cannotFind
+echo dommage, on a pas trouvé lol :P
+@pause
+goto exit
+:exit
