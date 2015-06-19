@@ -6,4 +6,10 @@
 <file name="jquery.ui.menu.min.css" server="127.0.0.1/paintfusion/" local="130561191000000000" remote="130767850800000000" Dst="2" />
 <file name="jquery-1.11.1.min.js" server="127.0.0.1/paintfusion/" local="130561191000000000" remote="130767850800000000" Dst="2" />
 <file name="jquery.ui-1.10.4.autocomplete.min.js" server="127.0.0.1/paintfusion/" local="130561191000000000" remote="130767850800000000" Dst="2" />
+<file name="jquery-1.11.1.min.js" server="localhost/paintfusion2/" local="130561191000000000" remote="130791939000000000" Dst="2" />
+<file name="jquery.ui-1.10.4.autocomplete.min.js" server="localhost/paintfusion2/" local="130561191000000000" remote="130791939000000000" Dst="2" />
+<file name="jquery.ui.autocomplete.min.css" server="localhost/paintfusion2/" local="130561191000000000" remote="130791939000000000" Dst="2" />
+<file name="jquery.ui.core.min.css" server="localhost/paintfusion2/" local="130561191000000000" remote="130791939000000000" Dst="2" />
+<file name="jquery.ui.menu.min.css" server="localhost/paintfusion2/" local="130561191000000000" remote="130791939000000000" Dst="2" />
+<file name="jquery.ui.theme.min.css" server="localhost/paintfusion2/" local="130561191000000000" remote="130791939000000000" Dst="2" />
 </dwsync>
