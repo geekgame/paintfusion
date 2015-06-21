@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 include ("check_admin.php");
 
 // calcul du nombre de premade
@@ -64,7 +62,10 @@ include ("check_admin.php");
 
 // REMPLISSAGE DE LA PREMIERE COLONNE D'ARBRE_T
 
-//recuperation des info 
+//Cleanage de l'arbre f°(idt)
+$cleanse = $pdo ->query("DELETE FROM arbre_t WHERE IDtournoi=$idt");
+//recuperation des infos
+
 	$info = $pdo -> query("SELECT id_team, nom_team FROM team_t WHERE id_tournoi=$idt");
 
 //préparation au plaçage des team dans l'arbre
@@ -73,8 +74,8 @@ include ("check_admin.php");
 	$ligne = 0;
 	while ($team_Tab = $info->fetch()) 
 	{
-		$ligne ++ ;
-		$matricage -> execute(array( 'ligne' => $ligne , 'id_tournoi' => $idt, 'id_team' => $team_Tab['id_team']));
+			$ligne ++ ;
+			$matricage -> execute(array( 'ligne' => $ligne , 'id_tournoi' => $idt, 'id_team' => $team_Tab['id_team']));
 	}
 
 ?>

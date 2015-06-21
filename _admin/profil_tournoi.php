@@ -2,8 +2,6 @@
 <!-- link href="styleProfil_tournoi.css" rel="stylesheet" type="text/css" media="all" -->
 
 <?php
-
-session_start();
 include ("check_admin.php");
 $etat = $pdo -> query('SELECT etatTournoi FROM tournoi WHERE IDTournoi ='.$idt);
 $tab_tournoi = $etat -> fetch();
@@ -28,7 +26,7 @@ while ($nb_team>=1)
 {
 	echo "<tr>";
 	$i=4;
-	while ($i) 
+	while ($i)
 	{
 		$info_team = $sql -> fetch();
 		echo '	<th>';
@@ -59,7 +57,7 @@ while ($nb_team>=1)
 		$i --;
 		echo "</td>";
 	}
-} 
+}
 echo "</table >";
 
 echo "<br/><br/><br/>";
