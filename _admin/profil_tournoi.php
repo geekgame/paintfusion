@@ -46,10 +46,12 @@ while ($nb_team>=1)
 		$compt = 0;
 		while ($compt < 5) 
 		{	
-			$info_joueur= $sql1 -> fetch();			
+			$info_joueur= $sql1 -> fetch();
+			$gertrude = $pdo -> query('SELECT pseudoJoueur, igPseudoJoueur FROM joueur WHERE IDJoueur="'.$info_joueur['id_joueur'].'"');
+			$info_nom = $gertrude ->fetch();
 			echo '	<form action="profil_joueur.php" methode="post">
 			<input type= "hidden" 	value = "'.$info_joueur["id_joueur"].'" 	name = "id_joueur"		/>
-			<input type="submit"  value=" '.$info_joueur["id_joueur"].' "/>
+			<input type="submit"  value=" '.$info_nom["pseudoJoueur"].'  ig:'.$info_nom["igPseudoJoueur"].' "/>
 			</form>';
 			$compt ++;
 		}
