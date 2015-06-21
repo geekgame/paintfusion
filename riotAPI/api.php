@@ -1,7 +1,7 @@
 <?php
  
  
-// class pour gérer l'API riot by kindermoumoute
+// class pour gérer l'API riot by moi bien sur lol
 class Riot
 {
         private $_apikey;
@@ -52,23 +52,6 @@ class Riot
         }
 }
  
-function SelectPlayer($idPlayer,$champ = false) {
-  // Sélectionne toutes les infos d'un user en fonction de son id dans la table 'users'
-  // $idUser est l'id de l'user recherché
-  // $champ permet de ne sélectionner qu'un champ particulier si l'on veut
- 
-  if($champ != false) {
-    $SQL = 'SELECT ' . $champ . ' FROM joueurs WHERE id=' . $idUser;
-    $rep = SQLGetChamp($SQL);
-    return $rep;
-  }
-  else {
-        $sql = "SELECT * FROM players WHERE id=" . $idUser;
-        $rep = SQLSelect($sql);
-        return parcoursRs($rep);
-  }
-}
- 
  
 // possibilité de testé en fonction du serveur
 // liste trouvé ici https://support.riotgames.com/hc/fr/articles/201752814-Noms-d-invocateur-FAQ#h1q4
@@ -86,7 +69,7 @@ function bonSummoners($summooos)
 function getStats($sumonners)
 {
  
-  $RiotAPI = new Riot("xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx","euw");               //<== ici tu mets ta clé API
+  $RiotAPI = new Riot("3a9a818c-d165-4f0b-96ad-aee0d5f073e7","euw");               //<== ici tu mets ta clé API
   $players = $RiotAPI->getInfosByNames($sumonners);
   $stats = array();
   if($players)
@@ -105,6 +88,7 @@ function getStats($sumonners)
         if ($ranks[$id][0]["queue"]=="RANKED_SOLO_5x5") {
           $stats[$id]["tier"] = $ranks[$id][0]["tier"];
           $stats[$id]["division"] = $ranks[$id][0]["entries"][0]["division"];
+		  $stats[$id]["lp"] = $ranks[$id][0]["entries"][0]["leaguePoints"];//////////////////////////////////////////////////////////////////
         }
       }
     }
