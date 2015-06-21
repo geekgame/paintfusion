@@ -34,7 +34,7 @@ echo "<table id= 'arbre' >";
 			{
 				$gertrude = $pdo -> query('SELECT nom_team FROM team_t WHERE id_team='.$trol["id_team"].' AND id_tournoi='.$idt);
 				$info_nom = $gertrude ->fetch();
-				echo '	<form action="current_match.php?id='.$id_teamA.' " methode="post">
+				echo $ligne.'	<form action="current_match.php?id='.$id_teamA.' " methode="post">
 					<input type="submit"  value=" '.$info_nom['nom_team'].' "/>
 					<input type="hidden" name='.$id_teamB.' value="valeur" />
 					</form>';
