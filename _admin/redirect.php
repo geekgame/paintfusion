@@ -1,4 +1,9 @@
+
+
+
 <?php
+
+session_start();
 $idt = $_POST['id_tournoi'];
 $etat_tournoi = $_POST['etat_tournoi'];
 include("../_utils/connect.php");

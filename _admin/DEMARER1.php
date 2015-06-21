@@ -1,5 +1,6 @@
 <?php
 include ("../_utils/connect.php");
+session_start();
 include ("check_admin.php");
 
 

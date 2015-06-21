@@ -1,3 +1,9 @@
+<?php
+include '../_utils/connect.php';
+session_start();
+include 'check_admin.php';
+$idt = $_GET['id_tournoi'];
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,13 +14,6 @@
         <meta charset="UTF-8">
     </head>
     <body>
-
-
-
-<?php $idt = $_GET['id_tournoi'];
-include ('check_admin.php');
-?>
-
 <p> 
 <form method = "post" action = "DEMARER1.php">
 	<label for = "NomTournoi">		nom du tournoi</label> :	<input type = "text"  value = "tournoi" name = "nt"  id = "NomTournoi"/>		<br />

@@ -1,5 +1,6 @@
 <?php
 include '../_utils/connect.php';
+session_start();
 include ("check_admin");
 $sql = $pdo -> query('SELECT pseudo, poste, niveau,id_team FROM inscrit_t WHERE id_tournoi = '.$_POST["id_tournoi"].' ORDER BY niveau ');
 

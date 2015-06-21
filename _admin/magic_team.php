@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include ("check_admin.php");
 
 // calcul du nombre de premade

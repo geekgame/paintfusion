@@ -1,3 +1,10 @@
+<?php
+include '../_utils/connect.php';
+session_start();
+include 'check_admin.php';
+$idt = $_POST['id_tournoi'];
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,11 +15,6 @@
         <meta charset="UTF-8">
     </head>
     <body>
-<?php
-include ("../_utils/connect.php");
-include ("check_admin.php");
-$idt = $_POST['id_tournoi'];
-?>
 
 <!--##################### PARTIE AJOUT FAKE #####################-->
 <form method = "post" action = "ajout_fake.php">

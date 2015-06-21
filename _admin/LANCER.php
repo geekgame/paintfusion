@@ -1,3 +1,10 @@
+<?php
+include '../_utils/connect.php';
+session_start();
+include 'check_admin.php';
+$idt = $_GET['id_tournoi'];
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -9,13 +16,6 @@
     </head>
     <body>
 
-
-<?php 
-
-include ("../_utils/connect.php");
-include ("check_admin.php");
-$idt = $_GET['id_tournoi'];
-?>
 
 <!--##################### PARTIE LISTE INSCRIT ##################-->
 <?php

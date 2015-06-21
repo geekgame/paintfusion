@@ -1,3 +1,9 @@
+<?php
+include("../_utils/connect.php");
+session_start();
+include 'check_admin.php';
+?>
+
 <!doctype HTML>
 <html>
 <head>
@@ -5,10 +11,7 @@
 </head>
 
 <body>
-<?php
-include("../_utils/connect.php");
-include 'check_admin.php';
-
+<?php 
 $sql = ('SELECT IDTournoi, NomTournoi,DateTournoi,etatTournoi FROM tournoi WHERE etatTournoi <> 4 ');
 $req = $pdo->query($sql);
 while ($tournoi = $req -> fetch() )

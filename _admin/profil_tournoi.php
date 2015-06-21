@@ -3,6 +3,7 @@
 
 <?php
 
+session_start();
 include ("check_admin.php");
 $etat = $pdo -> query('SELECT etatTournoi FROM tournoi WHERE IDTournoi ='.$idt);
 $tab_tournoi = $etat -> fetch();
