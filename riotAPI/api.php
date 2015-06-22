@@ -1,6 +1,5 @@
 <?php
  
- 
 // class pour gérer l'API riot by moi bien sur lol
 class Riot
 {
@@ -55,7 +54,7 @@ class Riot
  
 // possibilité de testé en fonction du serveur
 // liste trouvé ici https://support.riotgames.com/hc/fr/articles/201752814-Noms-d-invocateur-FAQ#h1q4
-function bonSummoners($summooos)    
+function bonsummoners($summooos)    
 {
   $sums = explode(",", $summooos);
   foreach ($sums as $value) {
@@ -66,11 +65,11 @@ function bonSummoners($summooos)
 }
  
 // fonction qui utilise l'API pour renvoyer des stats des joueurs mis en paramètre
-function getStats($sumonners)
+function getStats($summoner)
 {
  
   $RiotAPI = new Riot("3a9a818c-d165-4f0b-96ad-aee0d5f073e7","euw");               //<== ici tu mets ta clé API
-  $players = $RiotAPI->getInfosByNames($sumonners);
+  $players = $RiotAPI->getInfosByNames($summoner);
   $stats = array();
   if($players)
   {
@@ -100,30 +99,32 @@ function getStats($sumonners)
 // ici on utilise $_GET["summoner"] contenant la liste
 // des pseudo sous la forme "pseudo1,pseudo2,pseudo3,..."
 // jusqu'à 10 pseudos par requête
-if (isset($_GET["summoner"]))
+if ($summoner)
 {
  
-  $sumonners = str_replace(' ', '', $_GET["summoner"]);
-  //$sumonners = str_replace('/', '',$sumonners);
-  //$sumonners = str_replace('\\', '',$sumonners);
-  //$errorsum = bonSummoners($sumonners);
-  if (bonSummoners($sumonners))
+  //$summoner = str_replace(' ', '', $_GET["summoner"]);
+  //$summoner = str_replace('/', '',$summoner);
+  //$summoner = str_replace('\\', '',$summoner);
+  //$errorsum = bonsummoners($summoner);
+  if (bonsummoners($summoner))
   {
-    $joueurs = getStats($sumonners);
+    $joueurs = getStats($summoner);
     // $joueurs est un tableau à deux dimensions avec pour clés
     // les id des joueurs et comme sous tableau les infos :
     //  "name","revision" et en option "tier","division"
     // exemple : $joueurs[$id]["name"]
     foreach ($joueurs as $id => $value)
     {
-      echo "ID : ".$id."<br />";
+//      echo "ID : ".$id."<br />";
       foreach ($value as $info => $valeur) {
         if ($info == "icon") {
-          echo "<img src ='http://ddragon.leagueoflegends.com/cdn/5.3.1/img/profileicon/$valeur.png'>";
+          $img = 'http://ddragon.leagueoflegends.com/cdn/5.3.1/img/profileicon/'.$valeur.'.png';
         }
         else
         {
-          echo " ".$info." : ".$valeur;          
+         // echo " ".$info." : ".$valeur;   
+         //$api_stat[$info] = $valeur‏;       
+          if(isset($valeur)) $api_stat[$info] = $valeur;
         }
       echo "<br />";
        
