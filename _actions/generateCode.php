@@ -1,15 +1,10 @@
 <?php
 include("../_utils/lol.php");
 
-$nom=$_GET['name'];
-$pass=$_GET['pass'];
-
-$number=rand();
-
 $tournamentCode = new TournamentCode();
 //$gameConfig = GameConfig::Get("Paintfusion", "motdepasse", "http://myServer.com/report.php", "gameTestID");
-$gameConfig = GameConfig::Get($nom, $pass, "none", $number);
-print $tournamentCode->Generate(
+$gameConfig = GameConfig::Get($_SESSION["_nom"], $pass, "none", $number);
+$retour =  $tournamentCode->Generate(
           TournamentCode::SUMMONERS_RIFT, // Summoners rift as map
           TournamentCode::BLIND_PICK, // Blind pick as picktype
           3, // 5 players in each team

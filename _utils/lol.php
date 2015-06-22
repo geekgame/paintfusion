@@ -170,7 +170,7 @@ class TournamentResult
 
 //==================================
 
-
+/*
 
 $tournamentCode = new TournamentCode();
 $gameConfig = GameConfig::Get("Paintfusion", "motdepasse", "http://myServer.com/report.php", "gameTestID");
@@ -186,7 +186,7 @@ print $tournamentCode->Generate(
 
 
 
-
+*/
 
 
 
