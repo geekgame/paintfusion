@@ -95,7 +95,7 @@ else if($etatTournoi == 2)
     <h2>Matchs en cours :</h2>
     	<?php
 		//afficher la liste des matchs en cours pour ce tournoi
-		$sql = "SELECT nomTeam1, nomTeam2 FROM match_t WHERE IDTournoi = '$idt'";
+		$sql = "SELECT IDMatch, nomTeam1, nomTeam2 FROM match_t WHERE IDTournoi = '$idt'";
 		?>
         
 		<section id="pricing-table">
@@ -118,7 +118,7 @@ else if($etatTournoi == 2)
                                 <div class="pricing-header">
                                     <p class="pricing-title">En cours</p>
                                     <p class="pricing-rate"><span><?php echo $row["nomTeam1"] ?></span> VS <span><?php echo $row["nomTeam2"] ?></span></p>
-                                    <a href="#" class="btn btn-custom">Accéder aux détails</a>
+                                    <a href="match.php?idm=<?php echo $row["IDMatch"] ?>" class="btn btn-custom">Accéder aux détails</a>
                                 </div>
                             </div>
                         </div>

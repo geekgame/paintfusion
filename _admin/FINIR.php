@@ -28,7 +28,17 @@ include('arbre.php');
 	<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>
 	<label for = "winner">équipe vainqueur</label> : <input type = "text" name = "winner" id = "winner"/>
 	<label for = "loser">équipe perdante</label> : <input type = "text" name = "loser" id = "loser"/>
-	<input type = "submit" value = "clore le match" />
+	<input type = "submit" value = "Demarrer le match" />
+</p>
+</form>
+
+<form method = "get" action = "winner.php">
+<p>
+
+	<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>
+	<label for = "winner">équipe vainqueur</label> : <input type = "text" name = "winner" id = "winner"/>
+	<label for = "loser">équipe perdante</label> : <input type = "text" name = "loser" id = "loser"/>
+	<input type = "submit" value = "Terminer le match" />
 </p>
 </form>
 
