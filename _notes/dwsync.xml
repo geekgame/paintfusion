@@ -17,7 +17,8 @@
 <file name="register.php" server="localhost/paintfusion2/" local="130767863900647320" remote="130791939000000000" Dst="2" />
 <file name="retour.php" server="localhost/paintfusion2/" local="130775735384830736" remote="130791939000000000" Dst="2" />
 <file name="retour.txt" server="localhost/paintfusion2/" local="130767487670000000" remote="130791939000000000" Dst="2" />
-<file name="tournoi.php" server="localhost/paintfusion2/" local="130767872742181398" remote="130791939000000000" Dst="2" />
+<file name="tournoi.php" server="localhost/paintfusion2/" local="130794779350245995" remote="130794778800000000" Dst="2" />
 <file name="user_dashboard.php" server="localhost/paintfusion2/" local="130767946468028791" remote="130791939000000000" Dst="2" />
 <file name="magic_team.php" server="localhost/paintfusion2/" local="130791959764839125" remote="130791955200000000" Dst="2" />
+<file name="match.php" server="localhost/paintfusion2/" local="130794647793205705" remote="130794647400000000" Dst="2" />
 </dwsync>

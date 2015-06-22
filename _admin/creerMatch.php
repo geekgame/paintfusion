@@ -29,6 +29,8 @@ echo $retour;
 
 //include_once("../_actions/generateCode.php");
 
-$sql = "INSERT INTO `paintfusion`.`match` (`IDTournoi`, `idTeam1`, `idTeam2`, `codeMatch`) VALUES ('$id_tournoi', '$winner', '$loser', '$retour')";
+$sql = "INSERT INTO `paintfusion`.`match_t` (`IDTournoi`, `nomTeam1`, `nomTeam2`, `codeMatch`) VALUES ('$id_tournoi', '$winner', '$loser', '$retour')";
 	 
 	 $req = $pdo->query($sql);
+	 
+	 header("location:index.php");

@@ -22,7 +22,7 @@ include("profil_tournoi.php");
 include('arbre.php');
 
 ?>
-<form method = "post" action = "creerMatch.php">
+<form method = "get" action = "creerMatch.php">
 <p>
 
 	<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>

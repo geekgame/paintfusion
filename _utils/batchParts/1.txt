@@ -1,4 +1,4 @@
-
+@echo off
 
 set RADS_PATH=
 echo Recherche de LoL

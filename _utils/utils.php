@@ -1,4 +1,6 @@
 <?php
+
+
 function bonjour()
 {	
     if(date('G') < 18)

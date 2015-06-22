@@ -58,6 +58,14 @@ else
 <meta charset="utf-8">
 <title>Details Tournoi</title>
 <link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/tiles.css">
+
+<!-- Bootstrap -->
+            <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">            
+            <!-- Main Style -->
+            <link rel="stylesheet" type="text/css" href="style/tableauMatchs.css">
+            <!--Icon Fonts-->
+            <!--<link rel="stylesheet" media="screen" href="assets/fonts/font-awesome/font-awesome.min.css" />-->
 </head>
 <body>
 <?php //<div class="header"><p class="headerText"><red>PF</red>    include("_includes/header.php"); ?></p></div>
@@ -80,10 +88,74 @@ if($etatTournoi == 1)//si le tournoi a pas encore commencé
 else if($etatTournoi == 2)
 {
 	?>
-    <p>Le tournoi est actuellement en cours. Les inscriptions sont désactivées.</p>
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+    </div>
+    <div class="content">
+    <br /><br /><br /><br /><br />
+    <h2>Matchs en cours :</h2>
+    	<?php
+		//afficher la liste des matchs en cours pour ce tournoi
+		$sql = "SELECT nomTeam1, nomTeam2 FROM match_t WHERE IDTournoi = '$idt'";
+		?>
+        
+		<section id="pricing-table">
+            <div class="container">
+                <div class="row">
+                    <div class="pricing">
+                    <!-- -->
+                    
+                    <?php
+					
+					$exists = false;
+					
+					$req = $pdo->query($sql);
+					while($row = $req->fetch())
+					{   
+					$exists = true;                 
+                    ?>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title">En cours</p>
+                                    <p class="pricing-rate"><span><?php echo $row["nomTeam1"] ?></span> VS <span><?php echo $row["nomTeam2"] ?></span></p>
+                                    <a href="#" class="btn btn-custom">Accéder aux détails</a>
+                                </div>
+                            </div>
+                        </div>
+					<?php
+					}
+					
+					if(!$exists)
+					 echo "<h2>Aucun actuellement.</h2>";
+					?>
+						
+                    </div>
+                </div>
+            </div>
+        </section>
+		
+		
+		?>
+    </div>    
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+   
     <?php
 }
 ?>
 </div>
 </body>
 </html>
+
+<?php
+
+function nomTeamFromID($idteam,$pdo)
+{
+	echo "SELECT 'nom_team' FROM 'team_t' WHERE 'IDteam_t' = '$idteam'";
+	$sql = "SELECT 'nom_team' FROM 'team_t' WHERE 'IDteam_t' = '$idteam'";
+	
+	$req = $pdo->query($sql);
+	if($row = $req->fetch())
+		return $row["nom_team"];
+	return false;
+}
+?>

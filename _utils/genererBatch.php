@@ -7,7 +7,7 @@ header('Content-Type: application/bat');
 header('Content-Disposition: attachment; filename="spectateur.bat"');
 
 readfile("batchParts/1.txt");
-echo '@start "" "League of Legends.exe" "8394" "LoLLauncher.exe" "" "spectator spectator.euw1.lol.riotgames.com:80 '.$_POST["encryptionKey"]." ".$_POST["matchId"]." EUW1";
+echo '@start "" "League of Legends.exe" "8394" "LoLLauncher.exe" "" "spectator spectator.euw1.lol.riotgames.com:80 '.$_GET["encryptionKey"]." ".$_GET["matchId"]." EUW1";
 readfile("batchParts/2.txt");
 
 
