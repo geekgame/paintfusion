@@ -75,7 +75,7 @@ include('./riotAPI/api.php');
 			$lol_champ = array('Unknown',
 					'Aatrox','Ahri','Akali','Alistar','Amumu','Anivia','Annie','Ashe','Azir',
 					'Bard','Blitzcrank','Brand','Braum',
-					'Caitlyn','Cassipeia','ChoGath','Corki',
+					'Caitlyn','Cassiopeia','ChoGath','Corki',
 					'Darius','Diana','Draven','DrMundo',
 					'Ekko','Elise','Evelynn','Ezreal',
 					'Fiddlesticks','Fiora','Fizz',
@@ -84,18 +84,18 @@ include('./riotAPI/api.php');
 					'Irelia',
 					'Janna','JarvanIV','Jax',
 					'Jayce','Jinx',
-					'Kalista','Karme','Karthus','Kassadin','Katarina','Kayle','Kennen','KhaZix','KogMaw',
+					'Kalista','Karma','Karthus','Kassadin','Katarina','Kayle','Kennen','KhaZix','KogMaw',
 					'LeBlanc','LeeSin','Leona' ,'Lissandra','Lucian','Lulu','Lux',
 					'Malphite','Malzahar','Maokai','MasterYi','MissFortune','Mordekaiser','Morgana',
-					'Nami','Nusus','Nautilus','Nidalee','Nocturne','Nunu',
+					'Nami','Nasus','Nautilus','Nidalee','Nocturne','Nunu',
 					'Olaf','Orianna',
 					'Pantheon','Poppy',
 					'Quinn',
-					'Rammus',"Rek'Say",'Renekton','Rengar','Riven','Rumble','Ryze',
+					'Rammus',"Rek'Sai",'Renekton','Rengar','Riven','Rumble','Ryze',
 					'Sejuani','Shaco','Shen','Shyvana','Singed','Sion','Sivir','Skarner','Sona','Soraka','Swain','Syndra',
-					'Talon','Taric','Teemo','Tresh','Tristana','Trundle','Tryndamere','TwistedFate','Twitch',
+					'Talon','Taric','Teemo','Thresh','Tristana','Trundle','Tryndamere','TwistedFate','Twitch',
 					'Udyr','Urgot',
-					'Varus','Vayne','Veigar',"Vel'Koz",'Victor','Vi','Vladimir','Volibear',
+					'Varus','Vayne','Veigar',"Vel'Koz",'Viktor','Vi','Vladimir','Volibear',
 					'Warwick','Wukong',
 					'Xerath','Xinzhao',
 					'Yasuo','Yorick',
@@ -152,6 +152,7 @@ include('./riotAPI/api.php');
 						}
 						?>	
 					</select>
+					<input type= "hidden" 	value = "<?php echo $id_joueur; ?>" 	name = "id_joueur"		/>
 
 					<INPUT TYPE="submit"value="Actualiser"></INPUT>
 				</form>
