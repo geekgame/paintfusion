@@ -2,7 +2,11 @@
 <!-- link href="styleProfil_tournoi.css" rel="stylesheet" type="text/css" media="all" -->
 
 <?php
-include ("check_admin.php");
+//!!!!!!!!!!!!!!
+//CE PROG A BESION DE $idt POUR FONCTIONNER
+//!!!!!!!!!!!!!!
+
+include ("_utils/connect.php");
 $etat = $pdo -> query('SELECT etatTournoi FROM tournoi WHERE IDTournoi ='.$idt);
 $tab_tournoi = $etat -> fetch();
 $statut_tournoi =$tab_tournoi['etatTournoi'];
@@ -30,7 +34,7 @@ while ($nb_team>=1)
 	{
 		$info_team = $sql -> fetch();
 		echo '	<th>';
-		echo'	<FORM action="../profil_team.php?id='.$info_team["id_team"].'" method="post">
+		echo'	<FORM action="profil_team.php?id='.$info_team["id_team"].'" method="post">
 				<INPUT TYPE="submit"value="'.$info_team["nom_team"].'"></INPUT>
 				</FORM>';
 		echo'		</th>';
@@ -48,7 +52,7 @@ while ($nb_team>=1)
 			$info_joueur= $sql1 -> fetch();
 			$gertrude = $pdo -> query('SELECT pseudoJoueur, igPseudoJoueur FROM joueur WHERE IDJoueur="'.$info_joueur['id_joueur'].'"');
 			$info_nom = $gertrude ->fetch();
-			echo '	<form action="../profil_joueur.php" method="post">
+			echo '	<form action="profil_joueur.php" method="post">
 			<input type= "hidden" 	value = "'.$info_joueur["id_joueur"].'" 	name = "id_joueur"		/>
 			<input type="submit"  value=" '.$info_nom["pseudoJoueur"].'  ig:'.$info_nom["igPseudoJoueur"].' "/>
 			</form>';
