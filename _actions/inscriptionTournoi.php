@@ -11,9 +11,13 @@ if($poste != "Top" && $poste != "Mid" && $poste != "Jungle" && $poste != "ADC" &
 }
 
 include("../_utils/connect.php");
+include('../riotAPI/api.php');
 try{
 if($_POST["do"] == "Inscription")
 {
+	$api_req = $pdo -> query('SELECT igPseudoJoueur FROM joueur WHERE IDjoueur ='.$_SESSION["idJoueur"]),
+	$tab_pseudo = $api_req -> fetch();
+	$summoner = $tab_pseudo['0'];
 	$sql = "INSERT INTO inscrit_t
 	( 
 		poste,	
@@ -24,7 +28,7 @@ if($_POST["do"] == "Inscription")
 VALUES
 	( 
 		'".$poste."',	
-		42,	
+		".$api_stat["level"].",	
 		".$_POST["idt"].",	
 		".$_SESSION["idJoueur"]."
 	 )";
