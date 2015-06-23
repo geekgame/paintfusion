@@ -4,9 +4,9 @@ include("../_utils/connect.php");
 session_start();
 include 'check_admin.php';
 
-$winner	= $_POST['winner'];
-$loser	= $_POST['loser'];
-$id_tournoi = $_POST['id_tournoi'];
+$winner	= $_GET['winner'];
+$loser	= $_GET['loser'];
+$id_tournoi = $_GET['id_tournoi'];
 
 //echo "winner : ".$winner." loser : ".$loser." id : ".$id_tournoi;
 //echo "<br />";

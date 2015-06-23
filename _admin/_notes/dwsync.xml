@@ -5,18 +5,20 @@
 <file name="accueil_admin.php" server="localhost/paintfusion2/" local="130793623785760775" remote="130793637600000000" Dst="2" />
 <file name="ajout_fake.php" server="localhost/paintfusion2/" local="130793623785810801" remote="130793640000000000" Dst="2" />
 <file name="ajout_fake0.php" server="localhost/paintfusion2/" local="130793623785840678" remote="130793640000000000" Dst="2" />
-<file name="arbre.php" server="localhost/paintfusion2/" local="130793623785880860" remote="130793640000000000" Dst="2" />
+<file name="arbre.php" server="localhost/paintfusion2/" local="130793697140540365" remote="130794769800000000" Dst="2" />
 <file name="ARCHIVER.php" server="localhost/paintfusion2/" local="130793623785290421" remote="130793640000000000" Dst="2" />
 <file name="ARCHIVER1.php" server="localhost/paintfusion2/" local="130793623785320312" remote="130793640000000000" Dst="2" />
 <file name="DEMARER.php" server="localhost/paintfusion2/" local="130793623785470545" remote="130793640000000000" Dst="2" />
 <file name="DEMARER1.php" server="localhost/paintfusion2/" local="130793623785510601" remote="130793640000000000" Dst="2" />
-<file name="FINIR.php" server="localhost/paintfusion2/" local="130793623785560516" remote="130793640000000000" Dst="2" />
+<file name="FINIR.php" server="localhost/paintfusion2/" local="130794771010000000" remote="130794771000000000" Dst="2" />
 <file name="FINIR1.php" server="localhost/paintfusion2/" local="130793623785580511" remote="130793640000000000" Dst="2" />
 <file name="inscrit.php" server="localhost/paintfusion2/" local="130793623785950756" remote="130793640000000000" Dst="2" />
 <file name="LANCER.php" server="localhost/paintfusion2/" local="130793623785660550" remote="130793640000000000" Dst="2" />
 <file name="LANCER1.php" server="localhost/paintfusion2/" local="130793623785700732" remote="130793640000000000" Dst="2" />
 <file name="magic_team.php" server="localhost/paintfusion2/" local="130793623786020830" remote="130793640000000000" Dst="2" />
-<file name="profil_tournoi.php" server="localhost/paintfusion2/" local="130793623786060975" remote="130793640000000000" Dst="2" />
+<file name="profil_tournoi.php" server="localhost/paintfusion2/" local="130793697125999895" remote="130794769800000000" Dst="2" />
 <file name="styleProfil_tournoi.css" server="localhost/paintfusion2/" local="130793623786131020" remote="130793640000000000" Dst="2" />
 <file name="winner.php" server="localhost/paintfusion2/" local="130793623786221079" remote="130793112000000000" Dst="2" />
+<file name="creerMatch.php" server="localhost/paintfusion2/" local="130794776525434922" remote="130794777600000000" Dst="2" />
+<file name="index.php" server="localhost/paintfusion2/" local="130793664010000000" remote="130794669600000000" Dst="2" />
 </dwsync>

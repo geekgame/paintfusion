@@ -84,9 +84,6 @@ if($etatTournoi == 1)//si le tournoi a pas encore commencé
 		echo '<p><form id="red" method="post" action="_actions/inscriptionTournoi.php"><input type="hidden" name="idt" value="'.$idt.'"><input name="do" type="submit" 		value="Desinscription"/></form></p>';
 	else
 		echo '<p><form id="red" action="register.php"><input type="submit" value="Connexion/Inscription" /></form></p>';
-
-	include ('inscrit.php');
-
 }
 else if($etatTournoi == 2)
 {
@@ -99,8 +96,8 @@ else if($etatTournoi == 2)
     	<?php
 		//afficher la liste des matchs en cours pour ce tournoi
 		$sql = "SELECT IDMatch, nomTeam1, nomTeam2 FROM match_t WHERE IDTournoi = '$idt'";
+		?>
         
-				?>
 		<section id="pricing-table">
             <div class="container">
                 <div class="row">
@@ -136,60 +133,14 @@ else if($etatTournoi == 2)
                 </div>
             </div>
         </section>
-        
-
-		<section class= "recap_team">
-			<?php
-			include ('profil_tournoi.php');
-			?>
-		</section>
-		<section class="arbre">
-			<?php
-			include ('arbre.php');
-			?>			
-		</section>
-
 		
+		
+		?>
     </div>    
         <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
    
     <?php
 }
-elseif ($etatTournoi==3 ) 
-{		
-	$winner = $pdo -> query('SELECT id_team FROM arbre_t ORDER BY round DESC');
-	$zed = $winner -> fetch();
-	$ahri = $pdo -> query('SELECT nom_team FROM team_t WHERE id_team='.$zed['0'].' AND id_tournoi ='.$idt);
-	$win = $ahri -> fetch();
-	echo "<div>";
-		echo "Le vaiqueur est ".$win['0'];
-	echo "</div>";
-	echo '<section class="arbre">';
-		include ('arbre.php');
-	echo '</section>';
-	echo "<br />";
-	echo '<section class="recap_team">';
-		include ('profil_tournoi.php');
-	echo '</section>';
-
-	echo "<div>";
-		echo "INFO: Les récompenses n'ont pas encore été distribuées";
-	echo "</div>";
-
-}
-elseif ($etatTournoi==4) 
-{
-	echo '<section class="arbre">';
-		include ('arbre.php');		
-	echo '</section>';
-	echo "<br />";
-	echo '<section class="recap_team">';
-		include ('profil_tournoi.php');
-	echo '</section>';
-}
-else 
-	{	header('Location:index.php'	);	}
-
 ?>
 </div>
 </body>

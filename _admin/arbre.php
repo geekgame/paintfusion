@@ -1,6 +1,7 @@
 <?php
 
-include("_utils/connect.php");
+include("../_utils/connect.php");
+include 'check_admin.php';
 
 $result=$pdo -> query(' SELECT COUNT(*) AS nb FROM team_t WHERE id_tournoi='.$idt);
 $columns = $result->fetch();
@@ -33,7 +34,7 @@ echo "<table id= 'arbre' >";
 			{
 				$gertrude = $pdo -> query('SELECT nom_team FROM team_t WHERE id_team='.$trol["id_team"].' AND id_tournoi='.$idt);
 				$info_nom = $gertrude ->fetch();
-				echo '	<form action="match.php?id='.$id_teamA.' " methode="get">
+				echo $ligne.'	<form action="current_match.php?id='.$id_teamA.' " methode="post">
 					<input type="submit"  value=" '.$info_nom['nom_team'].' "/>
 					<input type="hidden" name='.$id_teamB.' value="valeur" />
 					</form>';

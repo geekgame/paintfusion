@@ -18,8 +18,8 @@ include 'check_admin.php';
 <?php
  $idt = $_GET['id_tournoi'];
 
-include("../profil_tournoi.php");
-include("../arbre.php");
+include("profil_tournoi.php");
+include("arbre.php");
 ?>
 
 <form method = "post" action = "ARCHIVER1.php">

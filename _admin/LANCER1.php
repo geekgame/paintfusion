@@ -30,7 +30,7 @@ $idt = $_POST['id_tournoi'];
 <?php
 include ("magic_team.php");
 
-include ("../profil_tournoi.php");
+include ("profil_tournoi.php");
 
 
 $sql = $pdo -> query("UPDATE tournoi SET etatTournoi=2 WHERE IDTournoi= $idt");
