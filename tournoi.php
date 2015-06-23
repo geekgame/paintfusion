@@ -121,7 +121,7 @@ else if($etatTournoi == 2)
                                 <div class="pricing-header">
                                     <p class="pricing-title">En cours</p>
                                     <p class="pricing-rate"><span><?php echo $row["nomTeam1"] ?></span> VS <span><?php echo $row["nomTeam2"] ?></span></p>
-                                    <a href="match.php?idm=<?php echo $row["IDMatch"] ?>" class="btn btn-custom">Accéder aux détails</a>
+                                    <a href="match.php?idm=<?php echo $row["IDMatch"]."&idt=$idt" ?>" class="btn btn-custom">Accéder aux détails</a>
                                 </div>
                             </div>
                         </div>

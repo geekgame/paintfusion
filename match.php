@@ -5,7 +5,87 @@
 
 <?php
 
+include_once("_utils/connect.php");
+include_once("_utils/transform.php");
+
+$idt = $_GET["idt"];
+
 //recuperer id game et encryptionKey
+
+//trouver le nom du premier joueur de la première team.
+
+//Sélectionner la première team
+
+$sql = "SELECT nomTeam1, nomTeam2 FROM match_t WHERE IDMatch = '$_GET[idm]'";
+
+$req = $pdo->query($sql);
+
+if($row = $req->fetch())
+{
+	$nomTeam1 = $row["nomTeam1"];
+	$nomTeam2 = $row["nomTeam2"];
+}
+else
+die();
+
+//recuperer l'id de la team 1
+$sql = "select id_team from team_t where nom_team = '$nomTeam1' AND id_tournoi = '$idt'";
+$req = $pdo->query($sql);
+if($row = $req->fetch())
+{
+	$idTeam1 = $row["id_team"];
+}
+else
+die();
+
+//recuperer l'id de la team 2
+
+$sql = "select id_team from team_t where nom_team = '$nomTeam2' AND id_tournoi = '$idt'";
+
+$req = $pdo->query($sql);
+if($row = $req->fetch())
+{
+	$idTeam2 = $row["id_team"];
+}
+else
+die();
+
+//recupérer l'id du premier joueur de cette team (on en profite pour tous les joeurs)
+
+$sql = "select id_joueur from inscrit_t where id_tournoi = '$idt' and id_team = '$idTeam1'";
+echo $sql;
+$req = $pdo->query($sql);
+$i = 0;
+while($row = $req->fetch())
+{
+	$idJoueurT1[$i] = $row["id_joueur"];
+	$i++;
+}
+
+$sql = "select id_joueur from inscrit_t where id_tournoi = '$idt' and id_team = '$idTeam2'";
+echo $sql;
+$req = $pdo->query($sql);
+$i = 0;
+while($row = $req->fetch())
+{
+	$idJoueurT2[$i] = $row["id_joueur"];
+	$i++;
+}
+
+/*
+echo "<pre>";
+var_dump($idJoueurT1);
+echo "</pre>";
+
+echo "<pre>";
+var_dump($idJoueurT2);
+echo "</pre>";
+*/
+
+
+
+echo($_GET["idt"]."-".$_GET["idm"]);
+
 $retour = '{
    "gameLength": -142,
    "gameMode": "CLASSIC",
@@ -130,14 +210,14 @@ $retour = '{
 
 $var = json_decode($retour);
 
-echo "<pre>";
-print_r($var);
-echo "</pre>";
+//echo "<pre>";
+//print_r($var);
+//echo "</pre>";
 
 $gameID = $var->gameId;
 $encryptionKey = $var->observers->encryptionKey;
 
-echo $gameID." ".$encryptionKey;
+//echo $gameID." ".$encryptionKey;
 
 
 /*
