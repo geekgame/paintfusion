@@ -17,28 +17,18 @@ include 'check_admin.php';
 <?php
  $idt = $_GET['id_tournoi'];
 
-include("profil_tournoi.php");
+include("../profil_tournoi.php");
 
-include('arbre.php');
+include('../arbre.php');
 
 ?>
-<form method = "get" action = "creerMatch.php">
+<form method = "post" action = "winner.php">
 <p>
 
 	<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>
 	<label for = "winner">équipe vainqueur</label> : <input type = "text" name = "winner" id = "winner"/>
 	<label for = "loser">équipe perdante</label> : <input type = "text" name = "loser" id = "loser"/>
-	<input type = "submit" value = "Demarrer le match" />
-</p>
-</form>
-
-<form method = "get" action = "winner.php">
-<p>
-
-	<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>
-	<label for = "winner">équipe vainqueur</label> : <input type = "text" name = "winner" id = "winner"/>
-	<label for = "loser">équipe perdante</label> : <input type = "text" name = "loser" id = "loser"/>
-	<input type = "submit" value = "Terminer le match" />
+	<input type = "submit" value = "clore le match" />
 </p>
 </form>
 

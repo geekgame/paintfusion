@@ -10,7 +10,19 @@ if(isset($_GET["idt"]))
 	$idt = "_includes/listTournois.php";
 */
 //$id_joueur = 3;
-$id_joueur = $_POST['id_joueur'];
+
+if(isset($_GET['id_joueur']))
+{
+	$id_joueur = $_GET['id_joueur'];
+}
+elseif (isset($_POST['id_joueur']) )
+{
+	$id_joueur = $_POST['id_joueur'];
+}
+else
+{
+	header('Location:index.php'	);
+}
 include("_utils/connect.php");
 	
 			$info = $pdo -> query('SELECT pseudoJoueur, igPseudoJoueur FROM joueur WHERE IDjoueur ="'.$id_joueur.'"');
@@ -30,19 +42,6 @@ include('./riotAPI/api.php');
 
 <!doctype HTML>
 <html>
-	<head>
-        <meta charset="utf-8" />
-		<title>profil_joueur</title>
-	</head>
-
-	<body>
-
-
-
-		<header >
-			<p class="headerText"><red>PF</red>
-			<?php include("_includes/header.php"); ?></p>
-		</header>
 
 		<section class="identifiants">
 			<?php 
@@ -198,5 +197,5 @@ include('./riotAPI/api.php');
 		</section>	
 
 	</form>
-</body>
+
 </html>
