@@ -21,6 +21,7 @@ elseif (isset($_POST['id_joueur']) )
 }
 else
 {
+	$id_joueur = 1;
 	header('Location:index.php'	);
 }
 include("_utils/connect.php");

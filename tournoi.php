@@ -9,9 +9,9 @@ if(isset($_GET["idt"]))
 }
 else
 {
-	//header("location:index.php");
-	//exit;//pas d'id tournoi, la page ne sert à rien
-	$idt=1;
+	header("location:index.php");
+	exit;//pas d'id tournoi, la page ne sert à rien
+	//$idt=1;
 }
 
 //Définir l'étât du visiteur de la page

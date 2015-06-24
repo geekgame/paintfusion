@@ -1,11 +1,10 @@
 <?php
-include("_utils/connect.php");
 
-function PlayerIdToPseudo($idjoueur)
+function PlayerIdToigPseudo($idjoueur,$pdo)
 {
-	$sql = "select pseudoJoueur from joueur where IDJoueur = '$idjoueur'";
+	$sql = "select igPseudoJoueur from joueur where IDJoueur = '$idjoueur'";
 	$req = $pdo->query($sql);
 	if($row = $req->fetch())
-		return $row["pseudoJoueur"];
+		return $row["igPseudoJoueur"];
 	return false;
 }
