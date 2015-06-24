@@ -1,13 +1,13 @@
 <?php
 /**
- *
+ * Cette page crée un match vide dans le jeu League Of Legends, et envoie un code pour permettre aux joueur de rejoindre la partie.
  */
 class TournamentCode
 {
 	const SUMMONERS_RIFT = 1;
 	const TWISTED_TREELINE = 4;
 	const PROVING_GROUNDS = 7;
-	const CRYSTAL_SCAR = 8; // Latest lol patch got me the info by logging everything :)
+	const CRYSTAL_SCAR = 8;
 	
 	const BLIND_PICK = 1;
 	const DRAFT_MODE = 2;
@@ -17,7 +17,7 @@ class TournamentCode
 	const SPEC_NONE = "NONE";
 	const SPEC_ALL = "ALL";
 	const SPEC_LOBBYONLY = "LOBBYONLY";
-	const SPEC_FRIENDS = "DROPINONLY"; // TODO: Find out this parameters real value.
+	const SPEC_FRIENDS = "DROPINONLY";
 	public $mapId = self::SUMMONERS_RIFT;
 	public $pickId = self::BLIND_PICK;
 	public $teamSize = 5;

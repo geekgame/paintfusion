@@ -1,5 +1,7 @@
 <?php
 
+//Remplir la page retour.php lorsque l'API de Riot renvoie les résultats d'un match.
+
 $value = "LOL";
 $value=file_get_contents("php://input");
 

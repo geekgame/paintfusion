@@ -10,14 +10,17 @@ if(isset($_GET["idt"]))
 <!doctype HTML>
 <html>
 <head>
-<link href="style/styleDashboard.css" rel="stylesheet" type="text/css">
-<link href="style/tiles.css" rel="stylesheet" type="text/css">
-<title>Administration user</title>
+	<link href="style/styleDashboard.css" rel="stylesheet" type="text/css">
+	<link href="style/tiles.css" rel="stylesheet" type="text/css">
+	<title>Administration user</title>
 </head>
 
 <body>
+
 <div class="header"><p class="headerText"><red>PF</red>    <?php include("_includes/header.php"); ?></p></div>
 <?php
+
+//si l'utilisateur n'est pas connecté, il est redirigé vers la page d'accueil
 if(!isset($_SESSION['pseudo']))
 {
 	echo $_SESSION["pseudo"];

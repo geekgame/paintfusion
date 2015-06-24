@@ -6,7 +6,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta charset="UTF-8">
-            <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+            <link href="../RAPH/style.css" rel="stylesheet" type="text/css" media="all" />
     </head>
 
     <body>
@@ -18,6 +18,7 @@
     	?>
 
     	<strong>COMPOSITION</strong>
+	<audio src="../sons/platre.wma" controls></audio>
 
     	<?php
     		mid($_SESSION["idteam"]);

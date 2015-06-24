@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <title>C.G.U. Paintfusion</title>
 <link rel="stylesheet" type="text/css" href="style/style.css">
-<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.--><script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/asap:n4:default.js" type="text/javascript"></script>
 </head>
 
 <body>
+<?php //Cette page était une blague, elle n'est pas linkée dans le site. ?>
 <div class="Middle">
 <a href="index.php">Retour (non svp)</a>
 <div class="content">

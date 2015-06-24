@@ -53,7 +53,7 @@ if($row = $req->fetch())
 else
 die();
 
-//recupérer l'id du premier joueur de cette team (on en profite pour tous les joeurs)
+//recupérer l'id du premier joueur de cette team (on en profite pour tous les joueurs)
 
 $sql = "select id_joueur from inscrit_t where id_tournoi = '$idt' and id_team = '$idTeam1'";
 
@@ -103,6 +103,9 @@ var_dump(pseudoToInfos($Team[1][0]));
 
 //echo($_GET["idt"]."-".$_GET["idm"]);
 
+
+
+//Ce qui suit est ce que la requête à l'API de Riot Games devrait renvoyer. Malhereusement, elle a été beaucoup modifiée le 23/06/2015, et nous n'avons pas le temps de mettre le projet à jour.
 $retour = '{
    "gameLength": -142,
    "gameMode": "CLASSIC",
