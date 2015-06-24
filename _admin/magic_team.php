@@ -1,4 +1,5 @@
 <?php
+//à besoin de $idt ,
 include ("check_admin.php");
 
 // calcul du nombre de premade
@@ -47,7 +48,8 @@ include ("check_admin.php");
     	    if (abs($i-$nb_team)==0)
             	$i=($i+1)%(2*$nb_team+1);
         	$var_team=abs($i-$nb_team);
-        	$var_team=$var_team + $nb_premade;
+        	$var_team=$var_team + $nb_premade;//ici pour 3 équipe, $var_team vaut succesivement 1 - 2 - 3 - 3 - 2 - 1 - 1 - 2 ...
+        	//ceci permet de faire des à peu près équilibrées
 
 		//remplissage de l'id_team pour l'inscrit
 			$majJ->execute(array('var_teamaze' => $var_team, 'id_inscrit' => $info['id_inscrit_t'] ) );

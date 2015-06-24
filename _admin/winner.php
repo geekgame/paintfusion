@@ -1,4 +1,6 @@
 <?php
+//sert à designer le vainqueur et le perdant d'un match
+//il faut le formlaire de FINI.php pour la faire marcher
 
 include("../_utils/connect.php");
 session_start();
@@ -10,14 +12,14 @@ $id_tournoi = $_POST['id_tournoi'];
 
 //echo "winner : ".$winner." loser : ".$loser." id : ".$id_tournoi;
 //echo "<br />";
-$coresp = $pdo -> query('SELECT id_team FROM team_t WHERE nom_team="'.$winner.'" AND id_tournoi='.$id_tournoi );
+$coresp = $pdo -> query('SELECT id_team FROM team_t WHERE nom_team="'.$winner.'" AND id_tournoi='.$id_tournoi );	//
 $cor 	= $coresp -> fetch();
 $id_winner = $cor['id_team'];
 $info   = $pdo -> prepare('SELECT * FROM arbre_t WHERE id_team=:id_winner AND IDtournoi=:id_tournoi ORDER BY round DESC');
 $info   -> bindParam(':id_winner',$id_winner,PDO::PARAM_INT);
 $info   -> bindParam(':id_tournoi',$id_tournoi,PDO::PARAM_INT);
 $info 	-> execute();
-$tab    = $info ->fetch();
+$tab    = $info ->fetch();  //ici on a récupéré la place du vainqueur dans l'arbre du tournoi
 //print_r($tab);
 $round	=	$tab['round'];
 $ligne_w=	$tab['ligne'];
@@ -35,7 +37,7 @@ $info   -> bindParam(':id_tournoi',$id_tournoi,PDO::PARAM_INT);
 $info   -> bindParam(':round',$round,PDO::PARAM_INT);
 $info 	-> execute();
 $tab 	= $info ->fetch();
-$ligne_l=	$tab['ligne'];
+$ligne_l=	$tab['ligne'];//ici on a récupéré la place du perdant dans l'arbre du tournoi
 
 $info 	->closecursor();
 $coresp ->closecursor();
@@ -44,6 +46,7 @@ $ligne = max($ligne_l,$ligne_w);
 $round = $round + 1 ;
 //echo "id_tournoi : ".$id_tournoi." winner : ".$winner." round : ".$round." ligne : ".$ligne_w."id_team : ".$id_team." loser : ".$loser." ligne : ".$ligne_l;
 
+//ici on fait passer le gagnant au tour suivant
 $win =$pdo -> prepare('INSERT INTO arbre_t (id_team,IDtournoi,ligne,round) VALUES (:id_team,:id_tournoi,:ligne,:round)  ') ;
 $win   	-> bindParam(':id_team'		,$id_team	,PDO::PARAM_INT);
 $win   	-> bindParam(':id_tournoi'	,$id_tournoi,PDO::PARAM_INT);

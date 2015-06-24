@@ -1,4 +1,5 @@
 <?php
+//variable nessecaire :  $_POST['id_tournoi']
 include '../_utils/connect.php';
 session_start();
 include 'check_admin.php';
@@ -28,9 +29,9 @@ $idt = $_POST['id_tournoi'];
 <br /><br />
 <!--#############################################################-->
 <?php
-include ("magic_team.php");
+include ("magic_team.php"); //création des équipe
 
-include ("../profil_tournoi.php");
+include ("../profil_tournoi.php");//affichage du détail des équipes
 
 
 $sql = $pdo -> query("UPDATE tournoi SET etatTournoi=2 WHERE IDTournoi= $idt");

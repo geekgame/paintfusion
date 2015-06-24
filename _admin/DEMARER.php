@@ -1,8 +1,9 @@
 <?php
-include '../_utils/connect.php';
-session_start();
-include 'check_admin.php';
-$idt = $_GET['id_tournoi'];
+// variables demandées: $_GET['id_tournoi']
+	include '../_utils/connect.php';
+	session_start();
+    include 'check_admin.php';
+    $idt = $_GET['id_tournoi'];
 ?>
 <!doctype html>
 <html lang="fr">
@@ -14,13 +15,14 @@ $idt = $_GET['id_tournoi'];
         <meta charset="UTF-8">
     </head>
     <body>
-<p> 
-<form method = "post" action = "DEMARER1.php">
-	<label for = "NomTournoi">		nom du tournoi</label> :	<input type = "text"  value = "tournoi" name = "nt"  id = "NomTournoi"/>		<br />
-	<label for = "PrizePoolTournoi">Recompense</label> :		<input type = "text"  value = "rien" 	name = "ppt" id = "PrizePoolTournoi"/>	<br />
-	<label for = "DateTournoi">		Date prevue</label> : 		<input type = "text"  value = "demain" 	name = "dtt" id = "DateTournoi"/>		<br />
-    <input type = "submit" value = "LANCER" />
-</form>
-</p>
+	<p> 
+		<!-- formulaire pour créer un tournoi -->
+		<form method = "post" action = "DEMARER1.php">
+			<label for = "NomTournoi">		nom du tournoi</label> :	<input type = "text"  value = "tournoi" name = "nt"  id = "NomTournoi"/>		<br />
+			<label for = "PrizePoolTournoi">Recompense</label> :		<input type = "text"  value = "rien" 	name = "ppt" id = "PrizePoolTournoi"/>	<br />
+			<label for = "DateTournoi">		Date prevue</label> : 		<input type = "text"  value = "demain" 	name = "dtt" id = "DateTournoi"/>		<br />
+    		<input type = "submit" value = "LANCER" />
+		</form>
+	</p>
 	</body>
 </html>

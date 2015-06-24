@@ -1,4 +1,5 @@
 <?php
+//necessite $_GET['id_joueur'] et/ou $_POST['id_joueur']
 session_start();
 $nombre_de_champions  = 125;//donc 121 champions
 /*
@@ -32,19 +33,21 @@ include("_utils/connect.php");
 			$igPseudo = $info1['igPseudoJoueur'];
 $summoner = $igPseudo;
 include('./riotAPI/api.php');
-	/*variable:	$id 	l:118
-	$img	l:121
-	$api_stat[$id]	["lp"]
-	["division"]
-	["tier"]
-	["level"]
+	/*variable récupérée par l'API
+				$id 	
+				$img	
+				$api_stat 	[$id]	
+							["lp"]
+							["division"]
+							["tier"]
+							["level"]
 */
 ?>
 
 <!doctype HTML>
 <html>
-
-		<section class="identifiants">
+<!-- cette section affiche le pseudo du site(pseudoJoueur) et celui du jeu(igPseudoJoueur) de l'utilisateur et ll'icon associé à son compte LoL-->
+		<section class="identifiants">  
 			<?php 
 			echo "<p>";
 			echo $pseudo;
@@ -58,7 +61,7 @@ include('./riotAPI/api.php');
 
 			?>
 		</section>
-
+<!-- affiche des variables récupérées par l'api -->
 		<section class="niveau">		
 			<?php
 			$rank_logo = "images/LoL/".$api_stat["tier"]."_".$api_stat["division"];
@@ -70,6 +73,7 @@ include('./riotAPI/api.php');
 			?>
 		</section>
 		
+<!-- ici l'utilisateur peut choisir d'afficher ses champion préféré parmis la liste -->
 		<section class="champions">
   			<?php
 			$lol_champ = array('Unknown',
@@ -82,8 +86,7 @@ include('./riotAPI/api.php');
 					'Galio','Gankplank','Garen','Gnar','Gragas','Graves',
 					'Hecarim','Heimerdinger',
 					'Irelia',
-					'Janna','JarvanIV','Jax',
-					'Jayce','Jinx',
+					'Janna','JarvanIV','Jax','Jayce','Jinx',
 					'Kalista','Karma','Karthus','Kassadin','Katarina','Kayle','Kennen','KhaZix','KogMaw',
 					'LeBlanc','LeeSin','Leona' ,'Lissandra','Lucian','Lulu','Lux',
 					'Malphite','Malzahar','Maokai','MasterYi','MissFortune','Mordekaiser','Morgana',
@@ -158,12 +161,13 @@ include('./riotAPI/api.php');
 				</form>
 				<?php 
 			}
-			echo '<img src="images/LoL/'.$champ1.'Square.png">';
+			echo '<img src="images/LoL/'.$champ1.'Square.png">';//affiche les iconnes des champions selectionnés
 			echo '<img src="images/LoL/'.$champ2.'Square.png">';
 			echo '<img src="images/LoL/'.$champ3.'Square.png">'; 
 			?>
 		</section>
 
+<!-- ici le joueur peut écrire du texte -->
 		<section class="description">
 			<?php
 				if (isset($_POST['description']) ) 

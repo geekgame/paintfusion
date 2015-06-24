@@ -1,4 +1,6 @@
 <?php
+//variables demandées: $_GET['id_tournoi']
+
 include '../_utils/connect.php';
 session_start();
 include 'check_admin.php';
@@ -14,32 +16,32 @@ include 'check_admin.php';
         <meta charset="UTF-8">
     </head>
     <body>
-<?php
- $idt = $_GET['id_tournoi'];
+        <?php
+            $idt = $_GET['id_tournoi'];
 
-include("../profil_tournoi.php");
+			include("../profil_tournoi.php");//affichage du détail des équipes
 
-include('../arbre.php');
+			include('../arbre.php');//affichage de l'arbre
 
-?>
-<form method = "post" action = "winner.php">
-<p>
+		?>
+		<!--formulaire pour designer le vainqueur et le perdant d'un match-->
+		<form method = "post" action = "winner.php"> 
+		<p>
 
-	<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>
-	<label for = "winner">équipe vainqueur</label> : <input type = "text" name = "winner" id = "winner"/>
-	<label for = "loser">équipe perdante</label> : <input type = "text" name = "loser" id = "loser"/>
-	<input type = "submit" value = "clore le match" />
-</p>
-</form>
+			<input type = "hidden" value = "<?php  echo $idt  ;?>" name = "id_tournoi"/>
+			<label for = "winner">équipe vainqueur</label> : <input type = "text" name = "winner" id = "winner"/>
+			<label for = "loser">équipe perdante</label> : <input type = "text" name = "loser" id = "loser"/>
+			<input type = "submit" value = "clore le match" />
+		</p>
+		</form>
 
-<form method = "post" action = "FINIR1.php">
-<p> 
-    <input type = "hidden" value = "<?php echo $idt ;?>"  name= "idt" />
-    <input type = "submit" value = "FINIR LE TOURNOI" />
-</p>
-</form>
-
-
+		<!-- formulaire pour changer l'etat du tournoi dans la bdd -->
+		<form method = "post" action = "FINIR1.php">
+		<p> 
+		    <input type = "hidden" value = "<?php echo $idt ;?>"  name= "idt" />
+		    <input type = "submit" value = "FINIR LE TOURNOI" />
+		</p>
+		</form>
 	</body>
 </html>
 

@@ -1,8 +1,6 @@
-
-
-
 <?php
-
+//c'est just une page qui sert à rediriger vert les bonnes page
+//elle à besoin de $_POST['etat_tournoi'] , $_POST['id_tournoi'],
 session_start();
 $idt = $_POST['id_tournoi'];
 $etat_tournoi = $_POST['etat_tournoi'];

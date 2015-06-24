@@ -1,4 +1,6 @@
 <?php
+//cette page a besion de :$_POST["nom_team"] , $_POST["id_tournoi"] 
+//cette page ajoute une fausse équipe au gré de l'admin
 include '../_utils/connect.php';
 session_start();
 include 'check_admin.php';
@@ -9,6 +11,7 @@ include 'check_admin.php';
     $nom_team   = $_POST["nom_team"];
     $idt        = $_POST["id_tournoi"];
 
+//recuperation du nombre d'équipe 
     $req = "SELECT COUNT(*) AS nb FROM team_t WHERE id_tournoi= $idt ";                              
     $result = $pdo->query($req);
     $columns = $result->fetch();
@@ -31,16 +34,15 @@ include 'check_admin.php';
 //    $depl_team -> execute(array('placeA' => $nb_team+1,'placeZ' => $place, 'idt' => $idt) ); 
 
 
+
+//création de équipes dans la bdd
 $place = $nb_team+1;
-    $ajout_fake = $pdo -> query("INSERT INTO team_t (id_team, nom_team,id_tournoi) VALUES ('$place', '$nom_team', '$idt' )");
-
-
-
-
+$ajout_fake = $pdo -> query("INSERT INTO team_t (id_team, nom_team,id_tournoi) VALUES ('$place', '$nom_team', '$idt' )");
 ?>
- <form method = "post" action = "LANCER1.php">
-<p> 
-    <input type = "hidden" value = "<?php echo $idt ?>"  name= "id_tournoi" />
-    <input type = "submit" value = "LANCER" />
-</p>
+<!--  button pour retourner valider l'ajout-->
+ <form method = "post" action = "LANCER1.php"> 
+    <p> 
+        <input type = "hidden" value = "<?php echo $idt ?>"  name= "id_tournoi" />
+        <input type = "submit" value = "LANCER" />
+    </p>
 </form>

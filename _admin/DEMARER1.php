@@ -1,8 +1,8 @@
 <?php
+//nessecite le post de DAMARER.php
 include ("../_utils/connect.php");
 session_start();
 include ("check_admin.php");
-
 
 $sql = "INSERT INTO tournoi
 	( 
