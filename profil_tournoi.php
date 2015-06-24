@@ -30,7 +30,7 @@ while ($nb_team>=1)
 	{
 		$info_team = $sql -> fetch();
 		echo '	<th>';
-		echo'	<FORM action="../profil_team.php?id='.$info_team["id_team"].'" method="post">
+		echo'	<FORM action="team.php?id='.$info_team["id_team"].'" method="post">
 				<INPUT TYPE="submit"value="'.$info_team["nom_team"].'"></INPUT>
 				</FORM>';
 		echo'		</th>';
