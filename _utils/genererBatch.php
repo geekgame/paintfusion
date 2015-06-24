@@ -1,6 +1,6 @@
 <?php
 
-// Vous voulez afficher un pdf
+// Fichier de sortie en batch
 header('Content-Type: application/bat');
 
 // Il sera nommé spectateur.bat
@@ -11,5 +11,5 @@ echo '@start "" "League of Legends.exe" "8394" "LoLLauncher.exe" "" "spectator s
 readfile("batchParts/2.txt");
 
 
-
+//Cette page génère un fichier batch qui lance League Of Legends ainsi que la sélection du mode spectateur et lance automatiquement la bonne partie pour permettre aux non-joueurs d'assister au match.
 ?>

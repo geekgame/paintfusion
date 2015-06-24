@@ -1,6 +1,6 @@
 <?php
  
-// class pour gérer l'API riot by moi bien sur lol
+// class pour gérer l'API riot by moi
 class Riot
 {
         private $_apikey;
@@ -20,7 +20,7 @@ class Riot
  
         public function getInfosByNames($summonernames)
         {
-                // if summonername correcte
+                // if summonername correct
                 $temp = $this->request("https://euw.api.pvp.net/api/lol/".$this->_server."/v1.4/summoner/by-name/".$summonernames."?api_key=".$this->_apikey);
                 if ($temp)
                 return json_decode($temp,true);
@@ -52,8 +52,8 @@ class Riot
 }
  
  
-// possibilité de testé en fonction du serveur
-// liste trouvé ici https://support.riotgames.com/hc/fr/articles/201752814-Noms-d-invocateur-FAQ#h1q4
+// possibilité de tester en fonction du serveur
+// liste trouvée ici https://support.riotgames.com/hc/fr/articles/201752814-Noms-d-invocateur-FAQ#h1q4
 function bonsummoners($summooos)    
 {
   $sums = explode(",", $summooos);
@@ -68,7 +68,7 @@ function bonsummoners($summooos)
 function getStats($summoner)
 {
  
-  $RiotAPI = new Riot("3a9a818c-d165-4f0b-96ad-aee0d5f073e7","euw");               //<== ici tu mets ta clé API
+  $RiotAPI = new Riot("3a9a818c-d165-4f0b-96ad-aee0d5f073e7","euw");            
   $players = $RiotAPI->getInfosByNames($summoner);
   $stats = array();
   if($players)
@@ -80,7 +80,7 @@ function getStats($summoner)
       $ids = $ids.$player["id"].",";
     }
  
-    $ranks = $RiotAPI->getRankById(substr($ids,0,-1));  // TODO : gérer le cas de + de 10 joueurs
+    $ranks = $RiotAPI->getRankById(substr($ids,0,-1));  
     if(!empty($ranks))
     {
       foreach ($ranks as $id => $infos) {

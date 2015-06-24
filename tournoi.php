@@ -73,7 +73,7 @@ else
 <h1><?php echo $nomTournoi ?></h1></p>
 <?php
 
-if($etatTournoi == 1)//si le tournoi a pas encore commencé
+if($etatTournoi == 1)//si le tournoi a pas encore commencé, donc permettre à l'utilisateur de choisir son poste et s'inscrire
 {
 	if($state == "spec")
 	{
@@ -154,6 +154,8 @@ else if($etatTournoi == 2)
         <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
    
     <?php
+	
+	//afficher différentes informations selon l'étât du tournoi
 }
 elseif ($etatTournoi==3 ) 
 {		
@@ -196,6 +198,8 @@ else
 </html>
 
 <?php
+
+//Fonction pour récupérer le nom d'une équipe à partir de son ID
 
 function nomTeamFromID($idteam,$pdo)
 {

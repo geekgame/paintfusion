@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("utils/utils.php");
+include("_utils/utils.php");
 ?>
 
 <!doctype html>
