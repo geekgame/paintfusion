@@ -1,12 +1,15 @@
 <!doctype HTML>
 <html>
 	<head>
+    	<link rel="stylesheet" type="text/css" href="style/style.css">
 	</head>
-
+	<body>
 <?php
 
 include_once("_utils/connect.php");
 include_once("_utils/transform.php");
+
+include_once("_utils/riotFunctions.php");
 
 $idt = $_GET["idt"];
 
@@ -53,7 +56,7 @@ die();
 //recupérer l'id du premier joueur de cette team (on en profite pour tous les joeurs)
 
 $sql = "select id_joueur from inscrit_t where id_tournoi = '$idt' and id_team = '$idTeam1'";
-echo $sql;
+
 $req = $pdo->query($sql);
 $i = 0;
 while($row = $req->fetch())
@@ -63,7 +66,7 @@ while($row = $req->fetch())
 }
 
 $sql = "select id_joueur from inscrit_t where id_tournoi = '$idt' and id_team = '$idTeam2'";
-echo $sql;
+
 $req = $pdo->query($sql);
 $i = 0;
 while($row = $req->fetch())
@@ -82,9 +85,23 @@ var_dump($idJoueurT2);
 echo "</pre>";
 */
 
+include_once("_utils/transform.php");
 
+foreach($idJoueurT1 as $key => $idj1)
+{
+	$Team[1][$key] = PlayerIdToigPseudo($idj1,$pdo)."<br />";
+}
 
-echo($_GET["idt"]."-".$_GET["idm"]);
+foreach($idJoueurT2 as $key => $idj2)
+{
+	$Team[2][$key] = PlayerIdToigPseudo($idj2,$pdo)."<br />";
+}
+
+var_dump(pseudoToInfos($Team[1][0]));
+
+//print_r($Team);
+
+//echo($_GET["idt"]."-".$_GET["idm"]);
 
 $retour = '{
    "gameLength": -142,
